@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Marca */
+  --color-marca: #1f7a4d;
+  --color-marca-fuerte: #155e3b;
+  --color-marca-suave: #e3f3ea;
+  --color-sol: #f2b233;
+
+  /* Superficies y texto */
+  --color-fondo: #f6f6f2;
+  --color-superficie: #ffffff;
+  --color-superficie-suave: #f1f1ec;
+  --color-borde: #e2e1da;
+  --color-borde-fuerte: #858b82; /* controles: al menos 3:1 sobre la superficie */
+  --color-texto: #1f2a24;
+  --color-texto-suave: #545e57;
+
+  /* Estados energéticos: cada color va siempre junto a su nombre */
+  --color-normal: #17663f;
+  --color-normal-suave: #dff3e6;
+  --color-ahorro: #8f5200;
+  --color-ahorro-suave: #fdefd5;
+  --color-supervivencia: #b42318;
+  --color-supervivencia-suave: #fde8e5;
+
+  /* Categorías de dispositivo: solo para la marca de color, junto a su nombre */
+  --color-cat-esencial: #1f4fa8;
+  --color-cat-importante: #c2378a;
+  --color-cat-confort: #12a594;
+  --color-cat-prescindible: #86600a;
+
+  /* Series de las gráficas */
+  --color-serie-generacion: #1f7a4d;
+  --color-serie-consumo: #2f5fb3;
+  --color-serie-radiacion: #b7791f; /* radiación estimada (clima): 3,6:1 sobre la superficie */
+}
+
+body {
+  @apply bg-fondo text-texto antialiased;
+}
+
+/* Foco visible en todo lo que se puede operar con el teclado */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-marca);
+  outline-offset: 2px;
+}
+
+/* Parte de la batería que no se debe usar */
+.franjas-reserva {
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--color-supervivencia-suave) 0 4px,
+    color-mix(in srgb, var(--color-supervivencia) 22%, transparent) 4px 6px
+  );
+}

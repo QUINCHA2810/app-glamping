@@ -1,0 +1,43 @@
+# Variables de entorno (nunca subir credenciales reales)
+.env
+
+# Entornos virtuales de Python
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Node (para cuando exista frontend/)
+node_modules/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+docs/Componentes/*.json
+msg.json
+
+secrets.h
+**/secrets.h
+
+# tinytuya wizard/scan: guardan las local keys (y la cuenta de Tuya IoT). En
+# cualquier carpeta; ver firmware/README.md: se corren fuera del repo y de OneDrive.
+devices.json
+tinytuya.json
+snapshot.json
+tuya-raw.json
+
+# Respaldos de la base de datos (backend/tools/respaldo_bd.py): contienen
+# hashes de contraseñas y datos reales
+respaldo_*/
+
+# Archivos de trabajo con Claude / Claude Code: no son documentación del sistema
+CLAUDE.md
+.claude/
+PROMPT_*.md
+RONDA_*.md

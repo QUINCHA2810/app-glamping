@@ -1,0 +1,13 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+sqlalchemy>=2.0,<2.1  # 2.1 rompe con psycopg2
+psycopg2-binary>=2.9
+python-dotenv>=1.0
+alembic>=1.13
+paho-mqtt>=2.0  # mqtt_listener.py (telemetría real del ESP32/Mosquitto) y mqtt_publisher.py (comandos hacia la toma física)
+
+# Autenticación (R-1)
+passlib[bcrypt]>=1.7.4
+bcrypt>=4.0.1,<4.1  # passlib 1.7.4 no reconoce la versión en bcrypt>=4.1
+pyjwt>=2.8
+email-validator>=2.0  # requerido por pydantic.EmailStr en schemas.py

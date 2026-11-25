@@ -1,0 +1,4 @@
+-r requirements.txt
+
+# Pruebas (python -m unittest discover -s tests -t .): las usa fastapi.testclient.
+httpx>=0.27

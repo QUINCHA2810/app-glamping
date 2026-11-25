@@ -1,0 +1,12 @@
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: app-glamping-mosquitto
+    ports:
+      - "1883:1883"   # MQTT estándar — a esto se conectan el ESP32 y el backend
+      - "9001:9001"   # WebSockets (opcional, útil si algún día quieres MQTT desde el navegador)
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    restart: unless-stopped

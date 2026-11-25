@@ -1,0 +1,21 @@
+# Dependencias y build
+node_modules
+dist
+dist-ssr
+
+# Variables de entorno (el .env real nunca se sube; .env.example sí)
+.env
+.env.*
+!.env.example
+# Solo VITE_API_URL=/api para `npm run remoto` (sin secretos): sí se sube.
+!.env.remoto
+*.local
+
+# Logs
+*.log
+
+# Editor / sistema operativo
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
